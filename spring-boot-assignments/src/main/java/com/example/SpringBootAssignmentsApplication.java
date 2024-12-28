@@ -1,9 +1,12 @@
 package com.example;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 import com.example.auto.Student;
 import com.example.auto1.Restaurant;
@@ -39,9 +42,14 @@ public class SpringBootAssignmentsApplication implements CommandLineRunner{
 	private Theatre theatre;
 	@Autowired
 	private GamesArena gamesArena;
+	
+	@Autowired
+	private ApplicationContext context;
 
 	@Override
 	public void run(String... args) throws Exception {
+		Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+		
 //		student.showCourses("fronend").forEach(System.out::println);
 //		student.showCourses("backend").forEach(System.out::println);
 //		student.showCourses("cloud").forEach(System.out::println);
@@ -55,9 +63,10 @@ public class SpringBootAssignmentsApplication implements CommandLineRunner{
 		
 		System.out.println();
 //		theatre.moviesRunning("t","Tamil").forEach(System.out::println);
+//		
+//		System.out.println();
+//		gamesArena.showGames();
 		
-		System.out.println();
-		gamesArena.showGames();
 	}
 
 }
