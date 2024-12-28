@@ -56,6 +56,8 @@ public interface IProductRepository extends JpaRepository<Product, Integer>{
 	
 	@Query(name="getByCatPrice")
 	List<Product> getByCatPriceLess(String category,double price);
+	
+	
 
 
 }
