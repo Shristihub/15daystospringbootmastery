@@ -1,0 +1,13 @@
+#datasource specific confoguration
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/masterdb
+    username: root
+    password: root
+
+#jpa  specific configuration
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
